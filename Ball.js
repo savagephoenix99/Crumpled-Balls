@@ -10,18 +10,19 @@
         this.body = Bodies.circle(x,y,width,  options);
         this.width=width
         this.height=height
+        this.image=loadImage("paper.png")
         World.add(world, this.body);
 
         }
         display(){
           var paper=this.body.position;
           var angle=this.body.angle;
-          
+        
           push()
           translate(paper.x, paper.y);
           rotate(angle);
-          rectMode(CENTER);
-          ellipse(0,0,this.width, this.height);
+          imageMode(CENTER);
+          image(this.image,0,0,this.width, this.height);
           strokeWeight(2);
           fill("#BBBAC0");
           pop()  
